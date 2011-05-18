@@ -58,7 +58,12 @@
 
 
 - (id)transformedValue:(id)value {
-	MKPolygon *thePolygon=(MKPolygon *)value;
+	
+    if (![value isKindOfClass:[MKPolygon class]]) {
+        [NSException raise:@"BDMKPolygonToDataTransformer Exception" format:@"BDMKPolygonToDataTransformer transformedValue: value passed is not an MKPolygon instance!"];
+    }
+    
+    MKPolygon *thePolygon=(MKPolygon *)value;
 	
 	NSString *errorString=nil;
 	NSData * polygonData = [NSPropertyListSerialization dataFromPropertyList:[self dictionaryForPolygon:thePolygon]
@@ -90,6 +95,9 @@
 }
 
 - (id)reverseTransformedValue:(id)value {
+    if (![value isKindOfClass:[NSData class]]) {
+        [NSException raise:@"BDMKPolygonToDataTransformer Exception" format:@"BDMKPolygonToDataTransformer reverseTransformedValue: value passed is not an NSData instance!"];
+    }
 	NSData *theData=[(NSData *)value gzipInflate];
 	NSString *errorString=nil;
 	NSDictionary *polygonDictionary=[NSPropertyListSerialization propertyListFromData:theData 
