@@ -61,6 +61,7 @@
 	
     if (![value isKindOfClass:[MKPolygon class]]) {
         // Throw an exception if the wrong class is used.
+        // The class must be MKPolygon
         [NSException raise:@"BDMKPolygonToDataTransformer Exception" format:@"BDMKPolygonToDataTransformer transformedValue: value passed is not an MKPolygon instance!"];
     }
     
