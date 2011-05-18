@@ -61,7 +61,7 @@
 	
     if (![value isKindOfClass:[MKPolygon class]]) {
         // Throw an exception if the wrong class is used.
-        // The class must be MKPolygon
+        // The class must be MKPolygon.
         [NSException raise:@"BDMKPolygonToDataTransformer Exception" format:@"BDMKPolygonToDataTransformer transformedValue: value passed is not an MKPolygon instance!"];
     }
     
@@ -99,6 +99,7 @@
 - (id)reverseTransformedValue:(id)value {
     if (![value isKindOfClass:[NSData class]]) {
         // Throw an exception if the wrong class is used.
+        // The class must be NSData.
         [NSException raise:@"BDMKPolygonToDataTransformer Exception" format:@"BDMKPolygonToDataTransformer reverseTransformedValue: value passed is not an NSData instance!"];
     }
 	NSData *theData=[(NSData *)value gzipInflate];
