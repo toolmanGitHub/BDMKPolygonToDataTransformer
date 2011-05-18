@@ -97,6 +97,7 @@
 
 - (id)reverseTransformedValue:(id)value {
     if (![value isKindOfClass:[NSData class]]) {
+        // Throw an exception if the wrong class is used.
         [NSException raise:@"BDMKPolygonToDataTransformer Exception" format:@"BDMKPolygonToDataTransformer reverseTransformedValue: value passed is not an NSData instance!"];
     }
 	NSData *theData=[(NSData *)value gzipInflate];
