@@ -52,15 +52,28 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	// Move the polygon file from the application bundle to the Documents Directory
 	[self moveFileToDocDirectory];
 	
 }
 
 -(void)viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];
+	// Load the polygon from the file
 	MKPolygon *thePolygon=[self polygonFromFileForName:@"WashingtonSample"];
 	
+	// Show that the tranformer is working correctly
+	BDMKPolygonToDataTransformer *myTransformer=[[BDMKPolygonToDataTransformer alloc] init];
+	NSData *theData=[myTransformer transformedValue:thePolygon];
+	thePolygon=nil;
+	thePolygon=[myTransformer reverseTransformedValue:theData];
+	
+	[myTransformer release];
+	
+	// Add to the mapView	
 	[self.myMapView addOverlay:thePolygon];
+	[self.myMapView addAnnotation:thePolygon];
 	
 	[self.myMapView setVisibleMapRect:[thePolygon boundingMapRect] animated:YES];
 	
