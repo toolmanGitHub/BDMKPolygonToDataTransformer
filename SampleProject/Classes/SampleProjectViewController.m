@@ -116,7 +116,7 @@
 	BDMKPolygonToDataTransformer *myTransformer=[[BDMKPolygonToDataTransformer alloc] init];
 	
 	MKPolygon *thePolygon=[myTransformer reverseTransformedValue:theData];
-	
+	[myTransformer release];
 	return thePolygon;
 	
 }
