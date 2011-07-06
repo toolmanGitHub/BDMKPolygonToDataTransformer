@@ -87,7 +87,7 @@
 	
 	
 	__block NSMutableArray *blockArray=interiorPolygons;
-	[theInteriorPolygons enumerateObjectsUsingBlock:^(id polygon, NSUInteger iCntr, BOOL *stop){
+	[theInteriorPolygons enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id polygon, NSUInteger iCntr, BOOL *stop){
 		[blockArray addObject:[self dictionaryForPolygon:polygon]];
 	}];
 	
@@ -144,7 +144,7 @@
 					// Recurse for the interior polygons
 					interiorPolygons=[NSMutableArray arrayWithCapacity:[theInteriorPolygons count]];
 					__block NSMutableArray *blockArray=interiorPolygons;
-					[theInteriorPolygons enumerateObjectsUsingBlock:^(id polygonDict, NSUInteger iCntr, BOOL *stop){
+					[theInteriorPolygons enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id polygonDict, NSUInteger iCntr, BOOL *stop){
 						[blockArray addObject:[self polygonForDictionary:polygonDict]];
 					}];
 					
