@@ -911,8 +911,8 @@
 		<string>PrimaryDocumentSelectedCharacterRange</string>
 		<string>PrimaryDocumentTimestamp</string>
 		<string>PrimaryDocumentVisibleCharacterRange</string>
-		<real>331627424.005373</real>
-		<string>{0, 776}</string>
+		<real>331627536.45813698</real>
+		<string>{18776, 801}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1634,7 +1634,7 @@
 				<integer>145</integer>
 			</dict>
 		</dict>
-		<real>331627424.00177801</real>
+		<real>331627536.44203401</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4859,7 +4859,7 @@
 			</array>
 		</dict>
 		<string>HideAllIssues</string>
-		<real>331627424.00528097</real>
+		<real>331627536.45801997</real>
 		<string>{4373, 1}</string>
 		<dict>
 			<key>$class</key>
@@ -6197,7 +6197,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>331627424.01028901</real>
+		<real>331627536.47074598</real>
 		<string>{4373, 1}</string>
 		<string>-polygonForDictionary:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
@@ -8901,7 +8901,7 @@
 				<integer>730</integer>
 			</dict>
 		</dict>
-		<real>331627424.00585002</real>
+		<real>331627536.45867997</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13923,7 +13923,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>331627424.02388</real>
+		<real>331627536.51692599</real>
 		<string>{4373, 1}</string>
 		<dict>
 			<key>$class</key>
@@ -15600,7 +15600,7 @@
 				<integer>1165</integer>
 			</dict>
 		</dict>
-		<real>331627424.024445</real>
+		<real>331627536.51744998</real>
 		<dict>
 			<key>$class</key>
 			<dict>
