@@ -909,10 +909,10 @@
 			</array>
 		</dict>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<string>PrimaryDocumentTimestamp</string>
 		<string>PrimaryDocumentVisibleCharacterRange</string>
-		<real>331627536.45813698</real>
+		<string>PrimaryDocumentTimestamp</string>
 		<string>{18776, 801}</string>
+		<real>331627616.956761</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -927,11 +927,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>80</integer>
+					<integer>79</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>79</integer>
+					<integer>80</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -1634,7 +1634,7 @@
 				<integer>145</integer>
 			</dict>
 		</dict>
-		<real>331627536.44203401</real>
+		<real>331627616.95232302</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4823,11 +4823,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>79</integer>
+					<integer>80</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>80</integer>
+					<integer>79</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -4859,7 +4859,7 @@
 			</array>
 		</dict>
 		<string>HideAllIssues</string>
-		<real>331627536.45801997</real>
+		<real>331627616.95667702</real>
 		<string>{4373, 1}</string>
 		<dict>
 			<key>$class</key>
@@ -5107,11 +5107,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>79</integer>
+					<integer>80</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>80</integer>
+					<integer>79</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -6162,11 +6162,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>79</integer>
+					<integer>80</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>80</integer>
+					<integer>79</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -6197,7 +6197,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>331627536.47074598</real>
+		<real>331627616.96517998</real>
 		<string>{4373, 1}</string>
 		<string>-polygonForDictionary:</string>
 		<string>Xcode.IDEKit.EditorDocument.SourceCode</string>
@@ -8901,7 +8901,7 @@
 				<integer>730</integer>
 			</dict>
 		</dict>
-		<real>331627536.45867997</real>
+		<real>331627616.95729899</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -13888,11 +13888,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>79</integer>
+					<integer>80</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>80</integer>
+					<integer>79</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -13923,7 +13923,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>331627536.51692599</real>
+		<real>331627616.96927601</real>
 		<string>{4373, 1}</string>
 		<dict>
 			<key>$class</key>
@@ -15600,7 +15600,7 @@
 				<integer>1165</integer>
 			</dict>
 		</dict>
-		<real>331627536.51744998</real>
+		<real>331627616.96979201</real>
 		<dict>
 			<key>$class</key>
 			<dict>
