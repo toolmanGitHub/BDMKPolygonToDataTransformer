@@ -19,6 +19,7 @@
 		EC21EA7913838D4900F96F78 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EC21EA7813838D4900F96F78 /* libz.dylib */; };
 		EC21EB251383975400F96F78 /* WashingtonSample.bdl in Resources */ = {isa = PBXBuildFile; fileRef = EC21EB241383975400F96F78 /* WashingtonSample.bdl */; };
 		EC21EB7B13839B5800F96F78 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EC21EB7A13839B5800F96F78 /* README.rtf */; };
+		EC36435F140BE9B700E199BE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EC36435E140BE9B700E199BE /* .gitignore */; };
 		ECABAD8E1383813700899E67 /* BDMKPolygonToDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECABAD851383813700899E67 /* BDMKPolygonToDataTransformer.m */; };
 		ECABAD921383813700899E67 /* NSData-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ECABAD8D1383813700899E67 /* NSData-Extensions.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		EC21EA7813838D4900F96F78 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		EC21EB241383975400F96F78 /* WashingtonSample.bdl */ = {isa = PBXFileReference; lastKnownFileType = file; path = WashingtonSample.bdl; sourceTree = "<group>"; };
 		EC21EB7A13839B5800F96F78 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		EC36435E140BE9B700E199BE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		ECABAD841383813700899E67 /* BDMKPolygonToDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDMKPolygonToDataTransformer.h; path = ../BDMKPolygonToDataTransformer.h; sourceTree = "<group>"; };
 		ECABAD851383813700899E67 /* BDMKPolygonToDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDMKPolygonToDataTransformer.m; path = ../BDMKPolygonToDataTransformer.m; sourceTree = "<group>"; };
 		ECABAD8C1383813700899E67 /* NSData-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData-Extensions.h"; path = "../NSData-Extensions.h"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EC36435E140BE9B700E199BE /* .gitignore */,
 				EC21EB7A13839B5800F96F78 /* README.rtf */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -192,6 +195,7 @@
 				2899E5220DE3E06400AC0155 /* SampleProjectViewController.xib in Resources */,
 				EC21EB251383975400F96F78 /* WashingtonSample.bdl in Resources */,
 				EC21EB7B13839B5800F96F78 /* README.rtf in Resources */,
+				EC36435F140BE9B700E199BE /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
