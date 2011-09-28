@@ -43,12 +43,26 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 #import <Foundation/Foundation.h>
+/**
+ A subclass of NSValueTransformer that transforms an MKPolygon to a zipped NSData object. The creation of the zipped NSData object is done via the NSData-Extensions categorie from CocoaDev 
+ 
+*/ 
 
 @class MKPolygon;
 @interface BDMKPolygonToDataTransformer : NSValueTransformer {
 
 }
+/** Helper method that, given an NSDictionary object, will convert the polygon's points and any internal polygons into an MKPolygon.  This method will recursively create MKPolygons for the internal polygon.
+ 
+ @return An MKPolygon object
+ @param polygonDictionary An NSDictionary object that contains entires for the polygons points and any internal polygons.
+ */
 -(MKPolygon *)polygonForDictionary:(NSDictionary *)polygonDictionary;
+/** Helper method that converts an MKPolygon to an NSDictionary.  The dictionary will be converted by the transformer to a zipped data object.
+ 
+ @return An NSDictionary object that contains entires for the polygons points and any internal polygons.
+ @param thePolygon An MKPolygon object.
+ */
 -(NSDictionary *)dictionaryForPolygon:(MKPolygon *)thePolygon;
 
 @end
