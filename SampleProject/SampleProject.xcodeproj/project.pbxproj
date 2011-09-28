@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		EC08163B1432CD02009E83C1 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EC08163E1432CD02009E83C1 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				EC08163F1432CD09009E83C1 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* SampleProjectAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* SampleProjectAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -31,6 +45,23 @@
 		ECABAD8E1383813700899E67 /* BDMKPolygonToDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECABAD851383813700899E67 /* BDMKPolygonToDataTransformer.m */; };
 		ECABAD921383813700899E67 /* NSData-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = ECABAD8D1383813700899E67 /* NSData-Extensions.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC0816401432CF4C009E83C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC1012731432C86100103D12;
+			remoteInfo = BDMKPolygonToDataTransformer;
+		};
+		EC9C55AD1432D1A0002F6A57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC08163B1432CD02009E83C1;
+			remoteInfo = Documentation;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -211,6 +242,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC0816411432CF4C009E83C1 /* PBXTargetDependency */,
 			);
 			name = SampleProject;
 			productName = SampleProject;
@@ -231,6 +263,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EC9C55AE1432D1A0002F6A57 /* PBXTargetDependency */,
 			);
 			name = BDMKPolygonToDataTransformer;
 			productName = BDMKPolygonToDataTransformer;
@@ -259,6 +292,7 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* SampleProject */,
 				EC1012731432C86100103D12 /* BDMKPolygonToDataTransformer */,
+				EC08163B1432CD02009E83C1 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +321,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		EC08163F1432CD09009E83C1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"BDMKPolygonToDataTransformer\" \\\n--project-company \"Big Diggy SW\" \\\n--company-id com.bigdiggy \\\n--output ~/help \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--exit-threshold 2 \\\n--ignore .m \\\n--ignore SampleProjectApDelegate.h \\\n--ignore NSData-Extensions.h \\\n--ignore Classes \\\n--ignore UnitTest \\\n--no-repeat-first-par \\\n\"${PROJECT_DIR}\"";
+		};
 		EC10126D1432C86100103D12 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,6 +385,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC0816411432CF4C009E83C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC1012731432C86100103D12 /* BDMKPolygonToDataTransformer */;
+			targetProxy = EC0816401432CF4C009E83C1 /* PBXContainerItemProxy */;
+		};
+		EC9C55AE1432D1A0002F6A57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC08163B1432CD02009E83C1 /* Documentation */;
+			targetProxy = EC9C55AD1432D1A0002F6A57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EC1012791432C86100103D12 /* InfoPlist.strings */ = {
@@ -406,6 +466,20 @@
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		EC08163C1432CD02009E83C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC08163D1432CD02009E83C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -482,6 +556,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EC08163E1432CD02009E83C1 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC08163C1432CD02009E83C1 /* Debug */,
+				EC08163D1432CD02009E83C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EC10127F1432C86100103D12 /* Build configuration list for PBXNativeTarget "BDMKPolygonToDataTransformer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -489,6 +572,7 @@
 				EC10127E1432C86100103D12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
