@@ -78,14 +78,20 @@
 -(NSDictionary *)dictionaryForPolygon:(MKPolygon *)thePolygon{
 	NSUInteger numberOfCoordinates=thePolygon.pointCount;
 	
+    
+    // Collect the coordinates of the outer part of the polygon.
 	NSData *dataPoints=[NSData dataWithBytes:(thePolygon.points) length:sizeof(MKMapPoint)*numberOfCoordinates];
-	
-	// recursively retrieve the interior polygons
+
+	// recursively retrieve the interior polygons.  We are assuming that these interior polygons may
+    // have interior polygons themselves, so we will call dictionaryForPolygon: for each one.
+    
+    // First get the list of interior polygon objects
 	NSArray *theInteriorPolygons=[thePolygon interiorPolygons];
 	
+    //  Next set up an empty array to put the recursed interior polygons
 	NSMutableArray *interiorPolygons=[NSMutableArray arrayWithCapacity:[[thePolygon interiorPolygons] count]];
 	
-	
+	// Perform the recursion on all of the interior polygons.
 	__block NSMutableArray *blockArray=interiorPolygons;
     __block BDMKPolygonToDataTransformer *blockSelf=self;
 	[theInteriorPolygons enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id polygon, NSUInteger iCntr, BOOL *stop){
@@ -124,25 +130,35 @@
 	NSMutableArray *interiorPolygons=nil;
 	MKMapPoint *mapPoints=nil;
 	NSUInteger pointCount=0;
-	
+    
+    
+	// unwind the serialization defensively
+    
+    // first check to see if the polygon points exist.
 	if (![keys containsObject:@"polygonPoints"]) {
 		NSLog(@"BDMKPolygonToDataTransformer->polygonForDictionary: warning: polygonPoints Key not found");
 	}else{
-		
+		// The polygon points key exists, so begin the work of retrieving them, defensively
 		dataPoints=[polygonDictionary objectForKey:@"polygonPoints"];
 		mapPoints=(MKMapPoint *)[dataPoints bytes];
 		pointCount=[dataPoints length]/(sizeof(MKMapPoint));
 		
+        //  There is a key, but we need to make sure that there are actually points there.
 		if (pointCount==0) {
 			NSLog(@"BDMKPolygonToDataTransformer->polygonForDictionary: warning: number of polygonPoints is zero");
 			
 		}else {
+            
+            //  There are polygon points, so begin pulling out the interior polygons.
+            // Check to see if there are interiorPolygons and be defensive about pulling them out.
 			if ([keys containsObject:@"interiorpolygons"]) {
 				NSArray *theInteriorPolygons=[polygonDictionary objectForKey:@"interiorPolygons"];
 				
+                // There are internal polygons, how many?
 				if ([theInteriorPolygons count]>0) {
 					
-					// Recurse for the interior polygons
+					// Recurse for the interior polygons, again, because they themselves may have interior polygons.
+                    
 					interiorPolygons=[NSMutableArray arrayWithCapacity:[theInteriorPolygons count]];
 					__block NSMutableArray *blockArray=interiorPolygons;
                     __block BDMKPolygonToDataTransformer *blockSelf=self;
@@ -157,6 +173,7 @@
 		
 	} //if ([keys containsObject:@"polygonPoints")
 	
+    // Package everything up and return.
 	
 	MKPolygon *thePolygon=[MKPolygon polygonWithPoints:mapPoints count:pointCount interiorPolygons:interiorPolygons];
 	return thePolygon;
