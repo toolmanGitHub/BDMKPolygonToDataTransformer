@@ -422,6 +422,7 @@
 				GCC_PREFIX_HEADER = SampleProject_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SampleProject-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = SampleProject;
 			};
 			name = Debug;
@@ -435,6 +436,7 @@
 				GCC_PREFIX_HEADER = SampleProject_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SampleProject-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = SampleProject;
 				VALIDATE_PRODUCT = YES;
 			};
