@@ -71,7 +71,8 @@
     
     
     // Test for performance and leaking of objects
- /*   __unsafe_unretained NSData *weakData=theData;
+ /*  
+  __unsafe_unretained NSData *weakData=theData;
     dispatch_apply(7000, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(size_t indx) {
   
   // this new @autoreleasepool construct rocks.
@@ -87,7 +88,7 @@
 	// Add to the mapView	
     [self.myMapView addOverlay:thePolygon];
 
-		[self.myMapView addAnnotation:thePolygon];
+    [self.myMapView addAnnotation:thePolygon];
 	
 	[self.myMapView setVisibleMapRect:[thePolygon boundingMapRect] animated:YES];
 	
