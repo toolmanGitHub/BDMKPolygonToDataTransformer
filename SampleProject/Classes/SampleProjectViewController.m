@@ -68,12 +68,26 @@
 	NSData *theData=[myTransformer transformedValue:thePolygon];
 	thePolygon=nil;
 	thePolygon=[myTransformer reverseTransformedValue:theData];
+    
+    
+    // Test for performance and leaking of objects
+ /*   __unsafe_unretained NSData *weakData=theData;
+    dispatch_apply(7000, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(size_t indx) {
+  
+  // this new @autoreleasepool construct rocks.
+        @autoreleasepool {
+            NSData *strongData=weakData;
+            BDMKPolygonToDataTransformer *anotherTransformer=[[BDMKPolygonToDataTransformer alloc] init];
+            MKPolygon *anotherPolygon=[anotherTransformer reverseTransformedValue:strongData];
+        }
+        
+    });
 	
-	[myTransformer release];
-	
+	*/
 	// Add to the mapView	
-	[self.myMapView addOverlay:thePolygon];
-	[self.myMapView addAnnotation:thePolygon];
+    [self.myMapView addOverlay:thePolygon];
+
+		[self.myMapView addAnnotation:thePolygon];
 	
 	[self.myMapView setVisibleMapRect:[thePolygon boundingMapRect] animated:YES];
 	
@@ -116,7 +130,6 @@
 	BDMKPolygonToDataTransformer *myTransformer=[[BDMKPolygonToDataTransformer alloc] init];
 	
 	MKPolygon *thePolygon=[myTransformer reverseTransformedValue:theData];
-	[myTransformer release];
 	return thePolygon;
 	
 }
@@ -129,7 +142,6 @@
 	//	NSLog(@"the size of the compressed polygon:  %d",[theData length]);
 	
 	[theData writeToURL:dataURL atomically:YES];
-	[myTransformer release];
 }
 
 #pragma mark -
@@ -202,13 +214,13 @@
 	theView.alpha=0.35;
 	
 	//NSLog(@"MultiPolygonView=%@",theView);
-	return [theView autorelease];;
+	return theView;;
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
 	MKPinAnnotationView *pin =	[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
 	pin.canShowCallout = YES;
 	pin.animatesDrop = YES;
-	return [pin autorelease];
+	return pin;
 }
 
 #pragma mark -
@@ -228,10 +240,5 @@
 }
 
 
-- (void)dealloc {
-	[myMapView release];
-	
-    [super dealloc];
-}
 
 @end

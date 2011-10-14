@@ -51,8 +51,8 @@
     SampleProjectViewController *viewController;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet SampleProjectViewController *viewController;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet SampleProjectViewController *viewController;
 
 @end
 

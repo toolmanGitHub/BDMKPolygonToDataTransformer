@@ -92,10 +92,12 @@
 	NSMutableArray *interiorPolygons=[NSMutableArray arrayWithCapacity:[[thePolygon interiorPolygons] count]];
 	
 	// Perform the recursion on all of the interior polygons.
-	__block NSMutableArray *blockArray=interiorPolygons;
-    __block BDMKPolygonToDataTransformer *blockSelf=self;
+	__unsafe_unretained NSMutableArray *weakBlockArray=interiorPolygons;
+    __unsafe_unretained BDMKPolygonToDataTransformer *weakBlockSelf=self;
 	[theInteriorPolygons enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id polygon, NSUInteger iCntr, BOOL *stop){
-		[blockArray addObject:[blockSelf dictionaryForPolygon:polygon]];
+        NSMutableArray *strongBlockArray=weakBlockArray;
+        BDMKPolygonToDataTransformer *strongBlockSelf=weakBlockSelf;
+		[strongBlockArray addObject:[strongBlockSelf dictionaryForPolygon:polygon]];
 	}];
 	
 	return [NSDictionary dictionaryWithObjectsAndKeys:dataPoints,@"polygonPoints",interiorPolygons,@"interiorPolygons",nil];
@@ -160,10 +162,12 @@
 					// Recurse for the interior polygons, again, because they themselves may have interior polygons.
                     
 					interiorPolygons=[NSMutableArray arrayWithCapacity:[theInteriorPolygons count]];
-					__block NSMutableArray *blockArray=interiorPolygons;
-                    __block BDMKPolygonToDataTransformer *blockSelf=self;
+					__unsafe_unretained NSMutableArray *weakBlockArray=interiorPolygons;
+                    __unsafe_unretained BDMKPolygonToDataTransformer *weakBlockSelf=self;
 					[theInteriorPolygons enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id polygonDict, NSUInteger iCntr, BOOL *stop){
-						[blockArray addObject:[blockSelf polygonForDictionary:polygonDict]];
+                        NSMutableArray *strongBlockArray=weakBlockArray;
+                        BDMKPolygonToDataTransformer *strongBlockSelf=weakBlockSelf;
+						[strongBlockArray addObject:[strongBlockSelf polygonForDictionary:polygonDict]];
 					}];
 					
 				} //if ([theInteriorPolygons count]>0)

@@ -49,7 +49,7 @@
 	MKMapView *myMapView;
 
 }
-@property (nonatomic,retain) IBOutlet MKMapView *myMapView;
+@property (nonatomic,strong) IBOutlet MKMapView *myMapView;
 
 - (void)moveFileToDocDirectory;
 
