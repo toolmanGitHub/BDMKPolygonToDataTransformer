@@ -58,7 +58,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  @param polygonDictionary An NSDictionary object that contains entires for the polygons points and any internal polygons.
  */
 -(MKPolygon *)polygonForDictionary:(NSDictionary *)polygonDictionary;
-/** Helper method that converts an MKPolygon to an NSDictionary.  The dictionary will be converted by the transformer to a zipped data object.
+
+/** Helper method that converts an MKPolygon to an NSDictionary.  The dictionary will then be converted by the transformer to a zipped NSData object.
  
  @return An NSDictionary object that contains entires for the polygons points and any internal polygons.
  @param thePolygon An MKPolygon object.
